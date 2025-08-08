@@ -10,7 +10,9 @@ export function useHealthStatus() {
 
 async function fetchHealthStatus() {
   try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/health`)
+    // Use the configured API URL from environment
+    const API_URL = import.meta.env.VITE_API_URL || 'https://obscure-barnacle-7vgwr7px5jvcrj4p-8000.app.github.dev'
+    const response = await fetch(`${API_URL}/api/health`)
     if (!response.ok) return { status: 'error' }
     const data = await response.json()
     return data

@@ -1,7 +1,8 @@
 import { createContext, useContext, useReducer, ReactNode, useCallback } from 'react'
 import { AuthState, LoginCredentials, RegisterCredentials, AuthResult } from '@/types/auth'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+// Use the configured API URL from environment
+const API_URL = import.meta.env.VITE_API_URL || 'https://obscure-barnacle-7vgwr7px5jvcrj4p-8000.app.github.dev'
 
 // Action types
 export const AUTH_ACTIONS = {

@@ -4,6 +4,23 @@ A modern, full-featured starter template featuring FastAPI backend and React 19 
 
 ![image](frontend/public/starter.svg)
 
+## 🚀 GitHub Codespaces Ready
+
+This template is optimized for GitHub Codespaces with automatic setup and HTTPS configuration.
+
+**Quick Start in Codespaces:**
+```bash
+cd fastapi-react-starter
+./codespace-setup.sh
+```
+
+**Codespace URLs:**
+- Frontend: `https://YOUR_CODESPACE_NAME-5173.app.github.dev`
+- Backend: `https://YOUR_CODESPACE_NAME-8000.app.github.dev`
+- API Docs: `https://YOUR_CODESPACE_NAME-8000.app.github.dev/docs`
+
+See [CODESPACE.md](CODESPACE.md) for detailed Codespace setup instructions.
+
 ## Features
 
 - **Backend (FastAPI)**

@@ -1,4 +1,5 @@
 import os
+import json
 from pathlib import Path
 from functools import lru_cache
 from typing import Optional, List
@@ -15,7 +16,16 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
     DATABASE_URL: str = ""
     TEST_DATABASE_URL: Optional[str] = "sqlite+aiosqlite:///./test_app.db"
-    CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
+    
+    # CORS origins with support for environment variable parsing
+    @property
+    def CORS_ORIGINS(self) -> List[str]:
+        cors_env = os.getenv("CORS_ORIGINS", '["http://localhost:5173", "http://localhost:3000"]')
+        try:
+            return json.loads(cors_env)
+        except json.JSONDecodeError:
+            return ["http://localhost:5173", "http://localhost:3000"]
+    
     API_PREFIX: str = "/api"
 
     # Database settings
