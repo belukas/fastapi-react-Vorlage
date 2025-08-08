@@ -10,7 +10,6 @@ This template is optimized for GitHub Codespaces with automatic setup and HTTPS 
 
 **Quick Start in Codespaces:**
 ```bash
-cd fastapi-react-starter
 ./codespace-setup.sh
 ```
 
